@@ -49,3 +49,24 @@ WHERE name = "Layal";
 
 12
 DELETE FROM students WHERE name = "Layal";
+
+14
+CREATE TABLE "company_employees" (
+	"ID" INTEGER NOT NULL Primary key AUTOINCREMENT,
+	"Name" TEXT NOT NULL UNIQUE,
+	"Company" TEXT,
+	"Company_date" date);
+
+INSERT INTO company_employees (Name, Company, Company_date)
+SELECT employees.name, employees.company, companies.date
+FROM companies
+INNER JOIN employees ON companies.name=employees.Company;
+
+
+15
+SELECT name FROM company_employees
+WHERE Company_date < 2000;
+
+16
+SELECT company FROM employees
+WHERE Role = "Graphic Designer";
