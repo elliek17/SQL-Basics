@@ -70,3 +70,23 @@ WHERE Company_date < 2000;
 16
 SELECT company FROM employees
 WHERE Role = "Graphic Designer";
+
+18
+SELECT name FROM students
+WHERE Points in (SELECT MAX(Points) FROM students);
+
+19
+SELECT AVG(Points) FROM students;
+
+20
+SELECT COUNT(points)
+FROM students
+WHERE Points = 500;
+
+21
+SELECT name FROM students
+WHERE name LIKE '%s%';
+
+22
+SELECT * FROM students
+ORDER BY Points DESC;
